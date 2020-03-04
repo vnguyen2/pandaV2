@@ -12,7 +12,7 @@ CREATE TABLE `job_search` (
   `default_city` varchar(25) NOT NULL DEFAULT '',
   `key_word` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 # ------------------------------------------------------------
 
@@ -20,7 +20,7 @@ CREATE TABLE `library` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `resource` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 # ------------------------------------------------------------
 
@@ -28,7 +28,7 @@ CREATE TABLE `resource_type` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `type` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 # ------------------------------------------------------------
 
@@ -37,7 +37,7 @@ CREATE TABLE `technology` (
   `tech` char(250) NOT NULL DEFAULT '',
   `description` char(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 # ------------------------------------------------------------
 
@@ -57,4 +57,4 @@ CREATE TABLE `user` (
   `git_text3` char(250) DEFAULT NULL,
   `avitar_link` char(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
