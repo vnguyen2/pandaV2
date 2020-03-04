@@ -1,0 +1,109 @@
+{{> _header }}
+<div class="container">
+    <div class="row">
+      <aside class="col s12 m3">
+        <div class="profile center">
+          <img src="{{ user._json.avatar_url }}" class="circle profile-image z-depth-2" alt="{{user.username}} profile">
+          <h6><a href="https://github.com/{{ user.username }}">{{ user.username }}</a></h6>
+          <p>{{ user.displayName }}</p>
+          <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+          <hr style="width:50%">
+        </div> 
+        
+        <ul class="secondary-nav">
+          <li><a href="/admin/home">ADMIN DASHBOARD</a></li>
+          <li><a href="/admin/resource/add">NEW RESOURCE</a></li>
+          <li><a href="/admin/technology/type">NEW TECHNOLOGY</a></li>
+          <li><a href="/admin/users">MANAGE USERS</a></li>
+          <li><a href="/admin/resource/type">NEW RESOURCE TYPE</a></li>
+          <li><a href="/admin/jobs/api/add">NEW JOB API</a></li>
+        </ul>
+        
+      </aside>
+
+      </aside>
+
+
+
+      <main class="col s12 m9">
+        <h3 class="uppercase">NEW RESOURCE</h3>
+        <hr>
+
+
+            {{!--<div class="container">--}}
+                <div class="row">
+                    <br>
+                    <br>
+                    <form class="col s12" action="/admin/resource/add" method="POST">
+                        
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                            <input placeholder="Learn Jquery in 15 minutes" id="library_name" type="text" name="library_name">
+                            <label for="library_name">Resource Name</label>
+                            </div>
+                            <br>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                            <input placeholder="www.youtube.com/javascript" id="library_resource" type="text" name="library_resource">
+                            <label for="library_resource">Resource URL</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                            <p>Resource Type</p> 
+                            <p>
+                                {{#each resources}}
+                                <input type="radio" class="filled-in" id="{{type}}" name="resource_type" value="{{type}}"/>
+                                <label for="{{type}}">{{type}}</label>
+                                {{/each }}
+                            </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                            <p>Related technology</p> 
+                            <p>
+                            {{#each tech}}
+                                    <input type="radio" class="filled-in" id="{{id}}" name="tech_association" value="{{tech}}"/>
+                            
+                                <label for="{{id}}">{{tech}}</label>
+
+                            {{/each}}
+                            </p>
+                            </div>
+                        </div>
+                                
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <button class="waves-effect waves-light btn" type="submit">Add Resource For Users</button>
+                            </div>
+                        </div>
+                    </form>
+                     <main class="col s12 m12">
+                            <br>
+                            <br>
+                            <hr>
+                            <h3 class="uppercase">EXISTING RESOURCES</h3>
+                            <hr>
+
+                                    <div class="row">
+                                        <div class="input-field col s12 m12">
+                                        <p>
+                                            {{#each lib}}
+                                            <h5>- {{resource_name}}</h5>
+                                            {{/each }}
+                                        </p>
+                                        </div>
+                                    </div>
+
+                        </main>
+
+                </div>
+            {{!--</div>--}}
+    </div><!-- /row -->
+</div><!-- /container -->
+{{> _footer }}

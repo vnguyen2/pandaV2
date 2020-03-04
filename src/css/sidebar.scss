@@ -1,0 +1,22 @@
+.profile {
+  padding-top: 2rem;
+}
+.profile-image {
+  border: 2px solid #e3e3e3;
+  max-width: 50%;
+}
+
+
+.secondary-nav {
+  display: none;
+  @media only screen and (min-width : 992px) {
+    display: block;
+  }
+  padding: 2rem 0;
+  text-align: right;
+}
+
+.secondary-nav li {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}

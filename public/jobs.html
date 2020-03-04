@@ -1,0 +1,81 @@
+{{> _header }}
+
+
+
+  <div class="container">
+    <div class="row">
+      <aside class="col s12 m3">
+        {{> _sidebar_profile }}
+
+        <ul class="secondary-nav">
+        {{#each technology }}
+          <li><a class="{{active}}" href="{{#if link}}{{link}}{{else}}{{tech}}{{/if}}">{{ tech }}</a></li>
+        {{/each}}
+        </ul>
+        
+      </aside>
+
+      <main class="col s12 m9">
+        <h3 class="uppercase">Find your job</h3>
+        <div class="providers-tabs">
+          {{#each providers}}
+            <span>
+              <a class="{{active}}" href="/jobs/{{api_name}}">{{api_name}}</a>
+            </span>
+          {{/each}}
+        </div>
+          
+
+          
+
+        <div class="section">
+          {{!-- Dice --}}
+          {{#if jobs.resultItemList}}
+            <ul>
+            {{#each jobs.resultItemList }}
+              <li>
+                <p>
+                  <a href="{{ detailUrl }}">{{ jobTitle }}</a> @ {{company}}
+                </p>
+              </li>
+            {{/each}}
+            </ul>
+          {{/if}}
+          
+
+          
+          
+          {{!-- Muse --}}
+          {{#if jobs.took}}
+            {{#each jobs.results}}
+              <p>
+                <a href="{{ refs.landing_page }}">{{ name }}</a>
+                <br>
+                {{{contents}}}
+              </p>
+            {{/each}}
+          {{/if}}
+          
+          {{!-- Indeed --}}
+          {{#if jobs.radius}}
+            {{#each jobs.results }}
+              <p>
+                <a href="{{url}}">{{jobtitle}}</a>
+                <br>
+                {{#if company}}Company: {{company}} {{/if}}
+                <br>
+                {{#if snippet}}Snippet: {{{snippet}}} {{/if}}
+
+                </p>
+            {{/each}}
+          {{/if}}
+          
+          
+        </div>
+      </main>
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+  
+
+{{> _footer }}
