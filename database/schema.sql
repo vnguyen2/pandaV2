@@ -1,11 +1,11 @@
 ### Schema
-CREATE DATABASE panda_db;
-USE panda_db;
+CREATE DATABASE panda_dbV2;
+USE panda_dbV2;
 
 # ------------------------------------------------------------
 
 CREATE TABLE `job_search` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `api_name` varchar(50) NOT NULL DEFAULT '',
   `api_uri` varchar(250) NOT NULL DEFAULT '',
   `search_params` varchar(250) NOT NULL DEFAULT '',
@@ -17,7 +17,7 @@ CREATE TABLE `job_search` (
 # ------------------------------------------------------------
 
 CREATE TABLE `library` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `resource` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -25,7 +25,7 @@ CREATE TABLE `library` (
 # ------------------------------------------------------------
 
 CREATE TABLE `resource_type` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `type` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -33,7 +33,7 @@ CREATE TABLE `resource_type` (
 # ------------------------------------------------------------
 
 CREATE TABLE `technology` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `tech` char(250) NOT NULL DEFAULT '',
   `description` char(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -42,7 +42,7 @@ CREATE TABLE `technology` (
 # ------------------------------------------------------------
 
 CREATE TABLE `user` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `user_name` char(50) NOT NULL DEFAULT '',
   `display_name` char(50) NOT NULL DEFAULT '',
   `email` char(50) NOT NULL DEFAULT '',
