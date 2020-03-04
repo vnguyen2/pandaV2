@@ -53,13 +53,15 @@ app.use(methodOverride('_method'));
 app.engine('hbs', hbs(
   {
     extname: 'hbs',
-    // defaultLayout: '_main',
+    defaultLayout: false,
     layoutsDir: __dirname + '/views/layouts/',
     partialsDir: __dirname + '/views/layouts/'
   }
 ));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

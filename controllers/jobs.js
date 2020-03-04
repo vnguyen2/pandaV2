@@ -59,7 +59,7 @@ router.get('/jobs/:provider', connectLogin.ensureLoggedIn(), function (req, res,
       }
     }    
     
-    res.render('jobs', data);
+    res.render('jobs', {layout:false, data});
 
   });
 
@@ -122,7 +122,7 @@ router.get('/jobs/:provider/:tech', connectLogin.ensureLoggedIn(), function (req
   })
     .then( function (jobsResults) {
       data.jobs = jobsResults;
-      res.render('jobs', data);
+      res.render('jobs', {layout:false, data});
     })
     .catch( function (error) {
       console.log(error);

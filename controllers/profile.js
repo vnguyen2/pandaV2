@@ -45,7 +45,6 @@ router.post('/profile/add-repos', connectLogin.ensureLoggedIn(), function (req, 
       repos.repo_name = key;
       repos.repo_url = req.body[key];
     }
-  
       // if repos exist, update
       models.repos.findOrCreate({
         where: {
@@ -70,7 +69,7 @@ router.post('/profile/add-repos', connectLogin.ensureLoggedIn(), function (req, 
           $notIn: repoNames
         }
       }});
-      res.redirect('/profile/'+req.user.username);
+      res.redirect('/profile/'+ req.user.username);
     };
   
 });
@@ -91,6 +90,7 @@ router.get('/public/profile/:username', function (req, res) {
   // get the user's repos
   models.repos.findAll({ where: {username: req.params.username} }).then(function (records) {
     data.records = records;
+    console.log('THIS IS THE DATA: ' + records);
     client.get(ghuser, {}, function (err, status, body, headers) {
       data.userinfo = body; //json object
       res.render('public-profile', {data,

@@ -26,7 +26,7 @@ router.get('/admin/jobs/api/add', connectLogin.ensureLoggedIn(), function(req, r
         models.job_search.findAll({
         }).then(function(jobList){
         data.jobList = jobList;
-        res.render('admin_job_search', data);
+        res.render('admin_job_search', {layout:false, data});
          })
       }
    })
