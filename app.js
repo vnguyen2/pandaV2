@@ -18,8 +18,8 @@ var PORT = process.env.PORT || 3000;
 
 // Config Github strategy for Passport
 passport.use(new Strategy({
-    clientID: '4f448e79b704b975714a',
-    clientSecret: 'b95e804eb860775f081c28f576701c15cf75ab0a',
+    clientID: '6b6b9169867a1770c7c7',
+    clientSecret: '3096e4fc2f3316c2578577311d28f7af0b0f2e02',
     callbackURL: 'http://localhost:4000/login/github/return'
   },
   function(accessToken, refreshToken, profile, cb) {
