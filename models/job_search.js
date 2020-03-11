@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var job_search = sequelize.define('job_search', {
     api_name: DataTypes.STRING,
     api_uri: DataTypes.STRING,
-    search_params: DataTypes.STRING,
+    search_params: DataTypes.STRING
   },
 
   { 

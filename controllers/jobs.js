@@ -17,13 +17,10 @@ router.get('/jobs', connectLogin.ensureLoggedIn(), function (req, res, next) {
     api_name:{ $ne: 'Meetups' }
   } }).then(function (providers) {
     data.providers = providers;
-    // res.render('jobs', data);
-    res.redirect('/jobs/Dice/html');
+    res.render('jobs', data);
+    // res.redirect('/jobs/Dice/html');
   });
 
-  
-
-  
 });
 
 
@@ -59,7 +56,7 @@ router.get('/jobs/:provider', connectLogin.ensureLoggedIn(), function (req, res,
       }
     }    
     
-    res.render('jobs', {layout:false, data});
+    res.render('jobs', data);
 
   });
 
@@ -122,7 +119,7 @@ router.get('/jobs/:provider/:tech', connectLogin.ensureLoggedIn(), function (req
   })
     .then( function (jobsResults) {
       data.jobs = jobsResults;
-      res.render('jobs', {layout:false, data});
+      res.render('jobs', data);
     })
     .catch( function (error) {
       console.log(error);
